@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
-    cars = Cars.create([
+    cars = Car.create([
       {name: 'BMW', model: '335i coupe', year: 2011},
       {name: 'Audi', model: 'A5 coupe', year: 2011},
       {name: 'Benz', model: 'C class coupe', year: 2011}
