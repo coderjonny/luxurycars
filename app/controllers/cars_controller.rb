@@ -23,7 +23,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to cars_path, notice: 'Car was successfully created.'
+      redirect_to cars_path, notice: 'Car was successfully added to our inventory.'
     else
       render :new
     end
@@ -41,7 +41,7 @@ class CarsController < ApplicationController
   # DELETE /cars/1
   def destroy
     @car.destroy
-    redirect_to cars_url, notice: 'Car was successfully destroyed.'
+    redirect_to cars_url, notice: 'Car was successfully SOLD!'
   end
 
   private
@@ -52,6 +52,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:name, :model, :year)
+      params.require(:car).permit(:name, :model, :year, :price, :transmission)
     end
 end
