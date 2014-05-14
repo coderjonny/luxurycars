@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
 <h1>Listing cars</h1>
 
 <div class="jumbotron">
