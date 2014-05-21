@@ -1,6 +1,19 @@
 <div class= "well well-lg">
 
-  <%#Show some errors%>
+  <% if @car.errors.any? %>
+    <h2>
+      <%= pluralize(@car.errors.count, "error") %>
+      prohibited this car from being saved:
+    </h2>
+    <ul class="list-group">
+      <% @car.errors.full_messages.each do |message| %>
+        <li class="list-group-item list-group-item-danger">
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
 
   <%= form_for(@car) do |f| %>
         <div class="row">
